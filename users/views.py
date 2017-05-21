@@ -26,3 +26,7 @@ def register(request):
     # 如果用户正在访问注册页面，则渲染的是一个空的注册表单
     # 如果用户通过表单提交注册信息，但是数据验证不合法，则渲染的是一个带有错误信息的表单
     return render(request, 'users/register.html', context={'form': form})
+
+
+def index(request):
+    return render(request, 'index.html')
