@@ -19,7 +19,7 @@
             <div class="unit-1-2 unit-1-on-mobile">
                 <h1><a href="{% url 'index' %}">Django Auth Example</a></h1>
                 <h3>登录</h3>
-                <form class="form" action="{% url 'auth:login' %}" method="post">
+                <form class="form" action="{% url 'login' %}" method="post">
                     {% csrf_token %}
                     {{ form.non_field_errors }}
                     {% for field in form %}
@@ -31,6 +31,7 @@
                         {% endif %}
                     {% endfor %}
                     <button type="submit" class="btn btn-primary btn-block">登录</button>
+                    <input type="hidden" name="next" value="{{ next }}"/>
                 </form>
                 <div class="flex-left top-gap text-small">
                     <div class="unit-2-3"><span>没有账号？<a href="{% url 'users:register' %}">立即注册</a></span></div>

@@ -30,9 +30,10 @@
                         {% endif %}
                     {% endfor %}
                     <button type="submit" class="btn btn-primary btn-block">注册</button>
+                    <input type="hidden" name="next" value="{{ next }}"/>
                 </form>
                 <div class="flex-center top-gap text-small">
-                    <a href="{% url 'auth:login' %}">已有账号登录</a>
+                    <a href="{% url 'login' %}">已有账号登录</a>
                 </div>
             </div>
         </div>
